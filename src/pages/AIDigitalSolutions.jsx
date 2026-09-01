@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   Activity,
   Bell,
@@ -269,6 +270,7 @@ export default function AIDigitalSolutions({ lang = 'en' }) {
 
   return (
     <main className="ai-digital-solutions-page">
+      <SEO lang={lang} pageKey="aiDigital" />
       {/* HERO SECTION WITH AI BACKGROUND IMAGE */}
       <section className="ai-hero-section">
         <div className="hero-bg-container">

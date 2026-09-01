@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   Award,
   BarChart3,
@@ -196,6 +197,7 @@ export default function TechnologyServices({ lang = 'en' }) {
 
   return (
     <main className="technology-services-page">
+      <SEO lang={lang} pageKey="techServices" />
       {/* HERO SECTION WITH TECHNOLOGY BACKGROUND IMAGE */}
       <section className="technology-hero-section">
         <div className="hero-bg-container">

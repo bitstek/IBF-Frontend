@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
-import { ChevronDown, Menu, Moon, Search, Sun, User, X } from 'lucide-react'
+import { ChevronDown, Globe, Menu, Moon, Search, Sun, User, X } from 'lucide-react'
 import Logo from './Logo'
 
 export default function Header() {
@@ -28,6 +28,17 @@ export default function Header() {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
   }, [theme])
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
@@ -212,79 +223,91 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="mobile-panel" aria-label="Mobile navigation">
-          <form
-            onSubmit={(e) => {
-              handleHeaderSearchSubmit(e)
-              setOpen(false)
-            }}
-            className="mobile-search-form"
-          >
-            <input
-              type="text"
-              placeholder={isAr ? 'بحث عن منتج...' : 'Search product...'}
-              value={headerSearchQuery}
-              onChange={(e) => setHeaderSearchQuery(e.target.value)}
-              className="mobile-search-input"
-            />
-            <button type="submit" className="mobile-search-btn" aria-label="Search">
-              <Search size={16} />
-            </button>
-          </form>
-
-          <NavLink to={`${basePath}`} onClick={() => setOpen(false)}>
-            {isAr ? 'الرئيسية' : 'Home'}
-          </NavLink>
-          <div className="mobile-subgroup">
-            <span className="mobile-subgroup-title">{isAr ? 'الخدمات' : 'Services'}</span>
-            {servicesMenu.map((item) => (
-              <NavLink key={item.label} to={item.href} onClick={() => setOpen(false)}>
-                › {item.label}
-              </NavLink>
-            ))}
-          </div>
-          <div className="mobile-subgroup">
-            <span className="mobile-subgroup-title">{isAr ? 'المنتجات' : 'Products'}</span>
-            {productsMenu.map((item) => (
-              <NavLink key={item.label} to={item.href} onClick={() => setOpen(false)}>
-                › {item.label}
-              </NavLink>
-            ))}
-          </div>
-          <NavLink to={`${basePath}/industries`} onClick={() => setOpen(false)}>
-            {isAr ? 'القطاعات' : 'Industries'}
-          </NavLink>
-          <NavLink to={`${basePath}/about`} onClick={() => setOpen(false)}>
-            {isAr ? 'عن الشركة' : 'About'}
-          </NavLink>
-          <NavLink to={`${basePath}/contact`} onClick={() => setOpen(false)}>
-            {isAr ? 'اتصل بنا' : 'Contact'}
-          </NavLink>
-          <div className="mobile-theme-row">
-            <span>{isAr ? 'المظهر:' : 'Theme:'}</span>
-            <button
-              type="button"
-              className="theme-toggle-pill mobile-theme-btn"
-              onClick={toggleTheme}
+        <>
+          <div className="mobile-panel-backdrop" onClick={() => setOpen(false)} aria-hidden="true" />
+          <nav className="mobile-panel" aria-label="Mobile navigation">
+            <form
+              onSubmit={(e) => {
+                handleHeaderSearchSubmit(e)
+                setOpen(false)
+              }}
+              className="mobile-search-form"
             >
-              {theme === 'dark' ? (
-                <>
-                  <Sun size={15} className="sun-icon" />
-                  <span>{isAr ? 'الوضع الفاتح' : 'Light Mode'}</span>
-                </>
-              ) : (
-                <>
-                  <Moon size={15} className="moon-icon" />
-                  <span>{isAr ? 'الوضع الداكن' : 'Dark Mode'}</span>
-                </>
-              )}
-            </button>
-          </div>
-          <NavLink to={`${basePath}/request-a-quote`} className="mobile-rfq-btn" onClick={() => setOpen(false)}>
-            <span>{isAr ? 'طلب عرض سعر' : 'Request a Quote'}</span>
-            <User size={15} />
-          </NavLink>
-        </nav>
+              <input
+                type="text"
+                placeholder={isAr ? 'بحث عن منتج...' : 'Search product...'}
+                value={headerSearchQuery}
+                onChange={(e) => setHeaderSearchQuery(e.target.value)}
+                className="mobile-search-input"
+              />
+              <button type="submit" className="mobile-search-btn" aria-label="Search">
+                <Search size={16} />
+              </button>
+            </form>
+
+            <NavLink to={`${basePath}`} onClick={() => setOpen(false)}>
+              {isAr ? 'الرئيسية' : 'Home'}
+            </NavLink>
+            <div className="mobile-subgroup">
+              <span className="mobile-subgroup-title">{isAr ? 'الخدمات' : 'Services'}</span>
+              {servicesMenu.map((item) => (
+                <NavLink key={item.label} to={item.href} onClick={() => setOpen(false)}>
+                  › {item.label}
+                </NavLink>
+              ))}
+            </div>
+            <div className="mobile-subgroup">
+              <span className="mobile-subgroup-title">{isAr ? 'المنتجات' : 'Products'}</span>
+              {productsMenu.map((item) => (
+                <NavLink key={item.label} to={item.href} onClick={() => setOpen(false)}>
+                  › {item.label}
+                </NavLink>
+              ))}
+            </div>
+            <NavLink to={`${basePath}/industries`} onClick={() => setOpen(false)}>
+              {isAr ? 'القطاعات' : 'Industries'}
+            </NavLink>
+            <NavLink to={`${basePath}/about`} onClick={() => setOpen(false)}>
+              {isAr ? 'عن الشركة' : 'About'}
+            </NavLink>
+            <NavLink to={`${basePath}/contact`} onClick={() => setOpen(false)}>
+              {isAr ? 'اتصل بنا' : 'Contact'}
+            </NavLink>
+            <div className="mobile-controls-row">
+              <Link
+                to={targetLangPath || (isAr ? '/en' : '/ar')}
+                className="mobile-lang-btn"
+                onClick={() => setOpen(false)}
+                aria-label="Switch language"
+              >
+                <Globe size={15} />
+                <span>{isAr ? 'English (EN)' : 'العربية (AR)'}</span>
+              </Link>
+              <button
+                type="button"
+                className="mobile-theme-btn"
+                onClick={toggleTheme}
+                aria-label={isAr ? 'تبديل المظهر' : 'Toggle theme'}
+              >
+                {theme === 'dark' ? (
+                  <>
+                    <Sun size={15} />
+                    <span>{isAr ? 'فاتح' : 'Light'}</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon size={15} />
+                    <span>{isAr ? 'داكن' : 'Dark'}</span>
+                  </>
+                )}
+              </button>
+            </div>
+            <NavLink to={`${basePath}/request-a-quote`} className="mobile-rfq-btn" onClick={() => setOpen(false)}>
+              <span>{isAr ? 'طلب عرض سعر' : 'Request a Quote'}</span>
+              <User size={15} />
+            </NavLink>
+          </nav>
+        </>
       )}
     </header>
   )

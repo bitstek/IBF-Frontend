@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   ArrowRight,
   BadgeCheck,
@@ -155,7 +156,8 @@ export default function RequestQuote({ lang = 'en' }) {
       ]
 
   return (
-    <main className="request-quote-page">
+    <main className="rfq-themed-page">
+      <SEO lang={lang} pageKey="requestQuote" />
       {/* HERO SECTION WITH GOLD ACCENTS & VIGNETTE */}
       <section className="template-hero-section quote-hero-section">
         <div className="hero-bg-container">

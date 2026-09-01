@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   ArrowLeft,
   ArrowRight,
@@ -248,6 +249,7 @@ export default function Catalogue({ lang = 'en' }) {
 
   return (
     <main className="catalogue-page">
+      <SEO lang={lang} pageKey="catalogue" />
       {/* HERO SECTION WITH CATALOGUE BACKGROUND IMAGE */}
       <section className="catalogue-hero-section">
         <div className="hero-bg-container">

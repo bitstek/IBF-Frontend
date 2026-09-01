@@ -1,4 +1,5 @@
 import { ArrowRight, FileText, ShieldCheck } from 'lucide-react'
+import SEO from '../components/SEO'
 import CTASection from '../components/CTASection'
 import nexerpImage from '../assets/nexerp-dashboard.png'
 import { nexerpModules, saipClasses } from '../data/siteData'
@@ -29,6 +30,7 @@ export default function NexERP({ lang = 'en' }) {
 
   return (
     <main>
+      <SEO lang={lang} pageKey="nexerp" />
       <section className="nexerp-hero motion-lines">
         <div className="shell nexerp-layout">
           <div className="reveal-up">

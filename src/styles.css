@@ -4163,13 +4163,40 @@ html[dir="rtl"] .approach-connector-line {
     top: calc(100% + 8px);
     left: 14px;
     right: 14px;
+    max-height: calc(100vh - 90px);
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 20px 48px rgba(11, 25, 44, 0.16);
+    box-shadow: 0 20px 48px rgba(11, 25, 44, 0.25);
     z-index: 200;
   }
+  .mobile-panel::-webkit-scrollbar {
+    width: 5px;
+  }
+  .mobile-panel::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  [data-theme="dark"] .mobile-panel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-panel-backdrop {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 25, 44, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 190;
+  }
+
   [data-theme="dark"] .mobile-panel {
     background: #071426;
     border-color: rgba(255, 255, 255, 0.12);
@@ -4335,6 +4362,201 @@ html[dir="rtl"] .approach-connector-line {
     grid-template-columns: 1fr !important;
     gap: 32px;
   }
+
+  /* Mobile Button Alignment & Responsiveness Fixes */
+  .header-actions .btn-request-quote-template,
+  .header-actions .lang-pill-template,
+  .header-actions .theme-toggle-pill {
+    display: none !important;
+  }
+  .header-actions {
+    gap: 8px !important;
+  }
+  .mobile-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 16px;
+  }
+  .mobile-controls-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .mobile-lang-btn,
+  .mobile-theme-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #0b192c;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  [data-theme="dark"] .mobile-lang-btn,
+  [data-theme="dark"] .mobile-theme-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+  .mobile-rfq-btn {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 18px !important;
+    background: #0b192c !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+  }
+  [data-theme="dark"] .mobile-rfq-btn {
+    background: #2563eb !important;
+  }
+
+  /* Hero Stats Card Bar Mobile Fix */
+  .hero-stats-card-bar {
+    grid-template-columns: 1fr !important;
+    position: relative !important;
+    bottom: 0 !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    padding: 18px 20px !important;
+    gap: 14px !important;
+  }
+  .stat-card-box {
+    justify-content: flex-start !important;
+    padding-inline: 4px !important;
+    padding-bottom: 12px !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-bottom: 1px solid #eaede9 !important;
+  }
+  html[dir="rtl"] .stat-card-box {
+    border-right: 0 !important;
+    border-left: 0 !important;
+  }
+  .stat-card-box:last-child {
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .cta-banner-container,
+  .cta-section {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    padding: 24px 18px !important;
+  }
+  .cta-left-content {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+  .cta-right-buttons,
+  .cta-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+  .cta-btn-white,
+  .cta-btn-outline,
+  .cta-buttons .button,
+  .cta-buttons a,
+  .cta-right-buttons a,
+  .cta-right-buttons button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-actions-row,
+  .hero-button-group,
+  .hero-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .hero-actions-row a,
+  .hero-actions-row button,
+  .hero-button-group a,
+  .hero-button-group button,
+  .hero-buttons a,
+  .hero-buttons button,
+  .btn-primary-navy,
+  .btn-secondary-white,
+  .btn-tech-primary,
+  .btn-tech-outline,
+  .btn-gold-accent {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-card-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+  .btn-card-outline,
+  .btn-card-navy {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .section-header-flex,
+  .section-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+  .section-header-flex a,
+  .section-header-flex button,
+  .section-head a,
+  .section-head button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .btn-rfq-submit-navy,
+  .btn-contact-submit,
+  .btn-submit-primary,
+  .rfq-form-actions button,
+  .contact-form-actions button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    box-sizing: border-box !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4345,12 +4567,12 @@ html[dir="rtl"] .approach-connector-line {
     height: 38px !important;
   }
   .product-card-buttons {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 8px;
   }
   .btn-card-outline, .btn-card-navy {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    justify-content: center !important;
   }
   .btn-rfq-submit-navy {
     font-size: 14px;

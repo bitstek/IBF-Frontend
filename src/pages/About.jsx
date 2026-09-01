@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   Award,
   BarChart3,
@@ -103,6 +104,7 @@ export default function About({ lang = 'en' }) {
 
   return (
     <main className="about-template-page">
+      <SEO lang={lang} pageKey="about" />
       {/* HERO SECTION WITH ABOUT BACKGROUND IMAGE */}
       <section className="about-hero-section">
         <div className="hero-bg-container">

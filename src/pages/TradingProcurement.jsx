@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   Award,
   Battery,
@@ -247,6 +248,7 @@ export default function TradingProcurement({ lang = 'en' }) {
 
   return (
     <main className="trading-procurement-page">
+      <SEO lang={lang} pageKey="tradingProcurement" />
       {/* HERO SECTION WITH TRADING BACKGROUND IMAGE */}
       <section className="trading-hero-section">
         <div className="hero-bg-container">

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   BadgeCheck,
   Building2,
@@ -110,6 +111,7 @@ export default function Contact({ lang = 'en' }) {
 
   return (
     <main className="contact-template-page">
+      <SEO lang={lang} pageKey="contact" />
       {/* HERO SECTION WITH CONTACT BACKGROUND IMAGE */}
       <section className="contact-hero-section">
         <div className="hero-bg-container">

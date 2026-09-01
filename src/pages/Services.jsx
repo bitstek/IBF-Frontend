@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   ArrowRight,
   Brain,
@@ -266,6 +267,7 @@ export default function Services({ lang = 'en' }) {
 
   return (
     <main className="services-template-page">
+      <SEO lang={lang} pageKey="services" />
       {/* HERO SECTION WITH UPLOADED BACKGROUND IMAGE (IMAGE 1) */}
       <section className="template-hero-section services-hero-section">
         <div className="hero-bg-container">

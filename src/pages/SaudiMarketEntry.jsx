@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   AlertCircle,
   Building,
@@ -225,6 +226,7 @@ export default function SaudiMarketEntry({ lang = 'en' }) {
 
   return (
     <main className="saudi-market-entry-page">
+      <SEO lang={lang} pageKey="saudiMarketEntry" />
       {/* HERO SECTION WITH SAUDI MARKET BACKGROUND IMAGE */}
       <section className="saudi-market-hero-section">
         <div className="hero-bg-container">

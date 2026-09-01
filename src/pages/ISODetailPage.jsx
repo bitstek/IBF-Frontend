@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useParams, useLocation, Navigate } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   ArrowRight,
   BadgeCheck,
@@ -40,6 +41,12 @@ export default function ISODetailPage({ lang = 'en', forcedSlug }) {
 
   return (
     <main className="iso-detail-page">
+      <SEO
+        lang={lang}
+        customTitle={`${isAr ? data.titleAr : data.titleEn} | IBF Global ISO Certification`}
+        customDescription={isAr ? data.heroLeadAr : data.heroLeadEn}
+        faqs={data.faqs ? data.faqs.map(f => ({ question: isAr ? f.qAr : f.qEn, answer: isAr ? f.aAr : f.aEn })) : []}
+      />
       {/* HERO SECTION */}
       <section className="iso-detail-hero">
         <div className="shell">

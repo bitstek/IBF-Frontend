@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   BadgeCheck,
   ChevronRight,
@@ -290,6 +291,7 @@ export default function ISOCompliance({ lang = 'en' }) {
 
   return (
     <main className="iso-compliance-page">
+      <SEO lang={lang} pageKey="isoCompliance" />
       {/* HERO SECTION WITH ISO BACKGROUND IMAGE */}
       <section className="iso-hero-section">
         <div className="hero-bg-container">

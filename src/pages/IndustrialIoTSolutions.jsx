@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   Activity,
   BarChart3,
@@ -244,6 +245,7 @@ export default function IndustrialIoTSolutions({ lang = 'en' }) {
 
   return (
     <main className="industrial-iot-solutions-page">
+      <SEO lang={lang} pageKey="iotSolutions" />
       {/* HERO SECTION WITH IOT BACKGROUND IMAGE */}
       <section className="iot-hero-section">
         <div className="hero-bg-container">

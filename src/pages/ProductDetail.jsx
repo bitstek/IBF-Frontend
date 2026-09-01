@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   ArrowLeft,
   ArrowRight,
@@ -34,6 +35,19 @@ export default function ProductDetail({ lang = 'en' }) {
 
   return (
     <main className="product-detail-page">
+      <SEO
+        lang={lang}
+        type="product"
+        customTitle={`${product.title} (${product.brand}) | IBF Global Saudi Arabia`}
+        customDescription={product.desc}
+        productData={{
+          name: product.title,
+          desc: product.desc,
+          brand: product.brand,
+          mpn: product.mpn,
+          img: product.img,
+        }}
+      />
       {/* BREADCRUMB NAV */}
       <div className="shell breadcrumb-bar">
         <Link to={basePath}>{isAr ? 'الرئيسية' : 'Home'}</Link>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   Activity,
   BarChart3,
@@ -219,6 +220,7 @@ export default function ITServices({ lang = 'en' }) {
 
   return (
     <main className="it-services-page">
+      <SEO lang={lang} pageKey="itServices" />
       {/* HERO SECTION WITH IT BACKGROUND IMAGE */}
       <section className="it-hero-section">
         <div className="hero-bg-container">

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   ArrowRight,
   Building2,
@@ -95,6 +96,7 @@ export default function Industries({ lang = 'en' }) {
 
   return (
     <main className="industries-template-page">
+      <SEO lang={lang} pageKey="industries" />
       {/* HERO SECTION WITH INDUSTRIES BACKGROUND IMAGE */}
       <section className="industries-hero-section">
         <div className="hero-bg-container">

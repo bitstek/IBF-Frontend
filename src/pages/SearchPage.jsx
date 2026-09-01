@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Search } from 'lucide-react'
+import SEO from '../components/SEO'
 import PageHero from '../components/PageHero'
 import ProductCard from '../components/ProductCard'
 import { productSearchTerms, products } from '../data/siteData'
@@ -17,6 +18,7 @@ export default function SearchPage({ lang = 'en' }) {
 
   return (
     <main>
+      <SEO lang={lang} customTitle={isAr ? 'البحث عن المنتجات | IBF Global' : 'Product Search | IBF Global'} />
       <PageHero
         label={isAr ? 'البحث' : 'Search'}
         title={isAr ? 'البحث عن المنتجات برقم الموديل، العلامة التجارية، رقم القطعة، أو الكلمات المفتاحية.' : 'Find products by model number, brand, part number, or keyword.'}

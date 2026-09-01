@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import SEO from '../components/SEO'
 import CTASection from '../components/CTASection'
 import PageHero from '../components/PageHero'
 import { solutions } from '../data/siteData'
@@ -11,6 +12,11 @@ export default function SolutionPage({ lang = 'en' }) {
 
   return (
     <main>
+      <SEO
+        lang={lang}
+        customTitle={`${solution.heading} | IBF Global Saudi Arabia`}
+        customDescription={solution.summary}
+      />
       <PageHero label={solution.label} title={solution.heading} text={solution.summary} />
       <section className="shell serve-grid solution-feature-grid">
         {solution.features.map((feature) => (

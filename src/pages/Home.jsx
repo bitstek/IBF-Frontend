@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   ArrowRight,
   Brain,
@@ -240,6 +241,7 @@ export default function Home({ lang = 'en' }) {
 
   return (
     <main className="template-landing-page">
+      <SEO lang={lang} pageKey="home" />
       {/* 1. HERO SECTION WITH IMAGE 1 BACKGROUND & TEMPLATE OVERLAY */}
       <section className="template-hero-section">
         <div className="hero-bg-container">

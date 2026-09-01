@@ -1,0 +1,27 @@
+# Robots.txt for IBF Global (https://ibf.com.sa)
+# Optimization for SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization)
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /scratch/
+
+# Specific AI Answer & Generative Engine Crawlers (AEO / GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://ibf.com.sa/sitemap.xml
