@@ -157,6 +157,18 @@ export const seoPagesData = {
       keywords: 'NexERP Saudi Arabia, ERP software Jeddah, enterprise business management, cloud ERP Saudi',
       canonical: '/en/catalogue/nexerp',
     },
+    privacyPolicy: {
+      title: 'Privacy Policy | IBF Global Saudi Arabia',
+      description: 'Review the IBF Global Privacy Policy. Understand how we collect, use, store, and protect personal and commercial information, RFQs, and project specifications.',
+      keywords: 'IBF privacy policy, data protection Saudi Arabia, RFQ privacy, commercial NDA Saudi, business data security',
+      canonical: '/en/privacy-policy',
+    },
+    termsOfUse: {
+      title: 'Terms of Use & Conditions | IBF Global Saudi Arabia',
+      description: 'Read the Terms of Use for the IBF Global website. Outlines terms regarding industrial procurement inquiries, RFQ submissions, intellectual property, and site usage.',
+      keywords: 'IBF terms of use, terms and conditions Saudi Arabia, RFQ commercial terms, website legal policy IBF',
+      canonical: '/en/terms-of-use',
+    },
   },
   ar: {
     home: {
@@ -258,6 +270,18 @@ export const seoPagesData = {
       description: 'NexERP هو نظام إدارة المؤسسات المتكامل من IBF Global الذي يشمل إدارة المالية، المخزون، المشتريات، الموارد البشرية، وإدارة علاقات العملاء.',
       keywords: 'برنامج ERP السعودية, نظام إدارة مؤسسات جدة, NexERP',
       canonical: '/ar/catalogue/nexerp',
+    },
+    privacyPolicy: {
+      title: 'سياسة الخصوصية | IBF Global المملكة العربية السعودية',
+      description: 'اطلع على سياسة الخصوصية لشركة IBF Global. توضح كيفية جمع واستخدام وتخزين وحماية المعلومات الشخصية والتجارية، وطلبات عروض الأسعار والمواصفات الفنية.',
+      keywords: 'سياسة الخصوصية IBF, حماية البيانات السعودية, سرية عروض الأسعار, أمان البيانات التجارية',
+      canonical: '/ar/privacy-policy',
+    },
+    termsOfUse: {
+      title: 'شروط وأحكام الاستخدام | IBF Global المملكة العربية السعودية',
+      description: 'اقرأ شروط الاستخدام لموقع IBF Global. تحدد الشروط المتعلقة بطلبات عروض الأسعار، الاستفسارات التجارية، حقوق الملكية الفكرية، وضوابط استخدام الموقع.',
+      keywords: 'شروط الاستخدام IBF, الشروط والأحكام السعودية, شروط عروض الأسعار التجارية, سياسات الموقع IBF',
+      canonical: '/ar/terms-of-use',
     },
   },
 }

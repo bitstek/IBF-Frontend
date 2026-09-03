@@ -127,9 +127,9 @@ export default function Footer() {
             {isAr ? '© 2025 IBF العالمية. جميع الحقوق محفوظة.' : '© 2025 IBF Global. All rights reserved.'}
           </span>
           <div className="footer-legal-links">
-            <Link to={`${basePath}/about`}>{isAr ? 'سياسة الخصوصية' : 'Privacy Policy'}</Link>
+            <Link to={`${basePath}/privacy-policy`}>{isAr ? 'سياسة الخصوصية' : 'Privacy Policy'}</Link>
             <span className="legal-divider">|</span>
-            <Link to={`${basePath}/about`}>{isAr ? 'شروط الاستخدام' : 'Terms of Use'}</Link>
+            <Link to={`${basePath}/terms-of-use`}>{isAr ? 'شروط الاستخدام' : 'Terms of Use'}</Link>
           </div>
         </div>
       </div>

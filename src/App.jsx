@@ -21,6 +21,8 @@ import ISOCompliance from './pages/ISOCompliance'
 import ISODetailPage from './pages/ISODetailPage'
 import TechnologyServices from './pages/TechnologyServices'
 import Services from './pages/Services'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfUse from './pages/TermsOfUse'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -109,6 +111,9 @@ export default function App() {
         <Route path="/en/solutions/iso-13485" element={<ISODetailPage lang="en" forcedSlug="iso-13485" />} />
         <Route path="/en/solutions/technology-services" element={<TechnologyServices lang="en" />} />
         <Route path="/en/solutions/:slug" element={<SolutionPage lang="en" />} />
+        <Route path="/en/privacy-policy" element={<PrivacyPolicy lang="en" />} />
+        <Route path="/en/terms-of-use" element={<TermsOfUse lang="en" />} />
+        <Route path="/en/terms" element={<Navigate to="/en/terms-of-use" replace />} />
 
         {/* Arabic Routes */}
         <Route path="/ar" element={<Home lang="ar" />} />
@@ -136,6 +141,9 @@ export default function App() {
         <Route path="/ar/solutions/iso-13485" element={<ISODetailPage lang="ar" forcedSlug="iso-13485" />} />
         <Route path="/ar/solutions/technology-services" element={<TechnologyServices lang="ar" />} />
         <Route path="/ar/solutions/:slug" element={<SolutionPage lang="ar" />} />
+        <Route path="/ar/privacy-policy" element={<PrivacyPolicy lang="ar" />} />
+        <Route path="/ar/terms-of-use" element={<TermsOfUse lang="ar" />} />
+        <Route path="/ar/terms" element={<Navigate to="/ar/terms-of-use" replace />} />
 
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>
