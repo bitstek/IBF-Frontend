@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ibf-website",
+  "compatibility_date": "2025-01-01",
+  "account_id": "273b19abf47806376ccb222cdd0a3756",
+  "routes": [
+    {
+      "pattern": "ibf.com.sa/*",
+      "zone_name": "ibf.com.sa"
+    }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
